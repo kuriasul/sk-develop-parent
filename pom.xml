@@ -10,13 +10,35 @@
     </parent>
 
     <artifactId>sk-develop-parent</artifactId>
-    <version>2.0.0</version>
+    <version>2.0.1</version>
 
     <packaging>pom</packaging>
 
     <name>sk-develop-parent</name>
     <description>sk develop parent</description>
     <url>http://www.sikejava.com</url>
+
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <scm>
+        <url>https://github.com/skjv2014/sk-develop-parent</url>
+        <connection>scm:git:git://github.com/skjv2014/sk-develop-parent.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com/skjv2014/sk-develop-parent.git</developerConnection>
+    </scm>
+
+    <developers>
+        <developer>
+            <name>skjv2014</name>
+            <email>skjv2014@163.com</email>
+            <url>https://github.com/skjv2014</url>
+        </developer>
+    </developers>
 
     <modules>
         <module>app-parent</module>
