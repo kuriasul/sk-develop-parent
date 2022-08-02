@@ -53,6 +53,9 @@
         <sk.maven.info.skip>false</sk.maven.info.skip>
         <!-- 不跳过notice -->
         <sk.maven.notice.skip>false</sk.maven.notice.skip>
+        <!-- 格式化配置 -->
+        <formatter.skip>false</formatter.skip>
+        <formatter.style.file>eclipse-java-google-style.xml</formatter.style.file>
         <!-- 子项目需要覆盖, 即值为子项目的 main class -->
         <main.class>childProjectNeedOverride</main.class>
         <!-- buildzip jar配置 -->
@@ -790,6 +793,39 @@
             </resource>
         </resources>
         <plugins>
+            <!-- formatter -->
+            <plugin>
+                <groupId>net.revelc.code.formatter</groupId>
+                <artifactId>formatter-maven-plugin</artifactId>
+                <version>2.16.0</version>
+                <configuration>
+                    <skip>${formatter.skip}</skip>
+                    <directories>
+                        <directory>${project.build.sourceDirectory}</directory>
+                        <directory>${project.build.testSourceDirectory}</directory>
+                        <directory>${project.basedir}/src/main/resources</directory>
+                    </directories>
+                    <includes>
+                        <include>**/*.java</include>
+                    </includes>
+                    <configFile>${formatter.style.file}</configFile>
+                    <lineEnding>LF</lineEnding>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>format</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <dependencies>
+                    <dependency>
+                        <groupId>com.sikejava.framework.maven</groupId>
+                        <artifactId>maven-resource-hub</artifactId>
+                        <version>1.0.0</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
             <!-- notice -->
             <plugin>
                 <groupId>com.sikejava.framework.maven</groupId>
