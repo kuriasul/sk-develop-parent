@@ -17,4 +17,18 @@
     <description>desktop parent</description>
     <url>http://www.sikejava.com</url>
 
+    <properties>
+        <fontawesomefx.version>8.1</fontawesomefx.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>de.jensd</groupId>
+                <artifactId>fontawesomefx</artifactId>
+                <version>${fontawesomefx.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
 </project>
